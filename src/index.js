@@ -39,10 +39,12 @@ module.exports = function (opts) {
                 const percentage = Math.round(
                     saved / file.contents.length * 100
                 );
-                fancyLog(`
-                    ${logSymbols.success} ${file.relative} ${chalk.gray(
-                    `(saved ${chalk.bold(prettyBytes(saved))} ${percentage}%`
-                )}`);
+                fancyLog(
+                    `${logSymbols.success} ${file.relative} ` +
+                    chalk.gray(
+                    `(saved ${chalk.bold(prettyBytes(saved))} ${percentage}%)`
+                    )
+                );
 
                 file.contents = new Buffer(result.data);
                 cb(null, file);
