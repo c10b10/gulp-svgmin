@@ -57,7 +57,7 @@ module.exports = function (opts) {
 
                 var saved = file.contents.length - result.data.length;
                 var percentage = Math.round(saved / file.contents.length * 100);
-                (0, _fancyLog2.default)('\n                    ' + _logSymbols2.default.success + ' ' + file.relative + ' ' + _chalk2.default.gray('(saved ' + _chalk2.default.bold((0, _prettyBytes2.default)(saved)) + ' ' + percentage + '%'));
+                (0, _fancyLog2.default)(_logSymbols2.default.success + ' ' + file.relative + ' ' + _chalk2.default.gray('(saved ' + _chalk2.default.bold((0, _prettyBytes2.default)(saved)) + ' ' + percentage + '%)'));
 
                 file.contents = new Buffer(result.data);
                 cb(null, file);
